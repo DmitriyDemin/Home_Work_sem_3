@@ -11,56 +11,43 @@ namespace Method
             Console.Clear();
             string KeyboardInput()
             {
-                Console.Write("введите целое число:  ");
+                Console.Write("введите целое число, для выхода введение 'q':  ");
                 string num = (Console.ReadLine()!);
                 return num;
             }
             int CalculationSum(string n)
             {
                 int Sum = 0;
-                
-                
                 for (int i = 0; i < n.Length; i++)
-                    // char m = n[i];
-                    int f = Convert.ToInt32(n[i]);
-                    Sum = Sum + f;
-                    // Sum = Sum + int.Parse(n[i].ToString());
-                // Console.WriteLine($"сумма: {Sum} ");
+                    Sum = Sum + int.Parse(n[i].ToString());
                 // Console.WriteLine($"сумма: {Sum} ");
                 return Sum;
             }
 
-            int ConvStrInInt (string n)
+            int ConvStrInInt(string n)
             {
-            int f;
+                int f;
                 if (n.Length == 1)
                 {
                     char m = Convert.ToChar(n);
                     f = Convert.ToInt32(m);
-                    Console.WriteLine($"в таблице кодировок: {f} ");
+                    // Console.WriteLine($"в таблице кодировок: {f} ");
                 }
                 else
-                f = 0;
+                    f = 0;
                 // Console.WriteLine($"в таблице кодировок: {f} ");
-            return f;
-                
+                return f;
             }
-
-                
-                
-        
-                while (CalculationSum(KeyboardInput()) % 2 != 0 /*| ConvStrInInt(KeyboardInput()) != 113*/)
-                {
+            while (CalculationSum(KeyboardInput()) % 2 != 0 || ConvStrInInt(KeyboardInput()) != 113)
                 KeyboardInput();
-                // CalculationSum(KeyboardInput());
-            // ConvStrInInt(KeyboardInput());
+
+
         }
     }
 }
-}
 
 
-    
+
 
 
 
